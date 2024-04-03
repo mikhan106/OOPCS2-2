@@ -1,0 +1,39 @@
+package trafficLights;
+
+public class TrafficLightTest {
+
+    public static void main(String[] args) {
+        System.out.println("All traffic light colours and their durations.");
+
+        // print all light durations
+        for(TrafficLight light : TrafficLight.values()) {
+            System.out.printf("%-10s%-5d%-5s\n", light, light.getDuration(), "seconds");
+        }// end for loop
+
+    }// end main
+
+}// end TrafficLightTest
+
+
+package trafficLights;
+
+public enum TrafficLight {
+    //Declare constants of enum type
+    RED(100), // values are in seconds
+    GREEN(120),
+    YELLOW(35);
+
+    // instance fields
+    private final int duration;
+
+    // constructor
+    private TrafficLight(int duration) {
+        this.duration = duration;
+    }
+
+    // get method
+    public int getDuration() {
+        return duration;
+    }
+
+}
